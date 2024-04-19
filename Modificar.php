@@ -18,7 +18,7 @@ class Modificar {
         $conexion = $conexionObj->obtenirConnexio();
 
         // Consulta para obtener la información del producto
-        $consulta = "SELECT id, nom, descripció, preu, categoria_id
+        $consulta = "SELECT id, nom, descripcio, preu, categoria_id
                      FROM productes
                      WHERE id = " . $id;
         $resultado = $conexion->query($consulta);
@@ -52,7 +52,7 @@ class Modificar {
 
                             <div class="mb-3">
                                 <label for="descripcio" class="form-label">Descripción:</label>
-                                <input type="text" name="descripcio" class="form-control" value="' . $producto['descripció'] . '" required>
+                                <input type="text" name="descripcio" class="form-control" value="' . $producto['descripcio'] . '" required>
                             </div>
 
                             <div class="mb-3">
