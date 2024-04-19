@@ -27,7 +27,7 @@ class Actualitzar {
 
         // Construye la consulta SQL de actualización
         $consulta = "UPDATE productes
-                     SET nom = '$nom', descripció = '$descripcio', preu = '$preu', categoria_id = '$categoria'
+                     SET nom = '$nom', descripcio = '$descripcio', preu = '$preu', categoria_id = '$categoria'
                      WHERE id = '$id'";
 
         // Ejecuta la consulta y redirige a la página principal si tiene éxito

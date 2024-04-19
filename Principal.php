@@ -12,7 +12,7 @@ class Principal {
         $conexion = $conexionObj->obtenirConnexio();
 
         // Consulta para obtener la lista de productos con información de categorías
-        $consulta = "SELECT p.id, p.nom, p.descripció, p.preu, c.nom as categoria
+        $consulta = "SELECT p.id, p.nom, p.descripcio, p.preu, c.nom as categoria
                      FROM productes p
                      INNER JOIN categories c ON p.categoria_id = c.id";
         $resultado = $conexion->query($consulta);
@@ -55,7 +55,7 @@ class Principal {
                         <td>' . $i . '</td>
                         <td>' . 'prod-' . $fila['id'] . '</td>
                         <td>' . $fila['nom'] . '</td>
-                        <td>' . $fila['descripció'] . '</td>
+                        <td>' . $fila['descripcio'] . '</td>
                         <td>' . $fila['preu'] . '</td>
                         <td>' . $fila['categoria'] . '</td>
                         <td><a href="Modificar.php?id=' . $fila['id'] . '" class="btn btn-warning">Modificar</a></td>
