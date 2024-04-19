@@ -74,6 +74,7 @@ class Modificar {
 
                             <hr>
                             <!-- Botones de guardar y cancelar -->
+                            <input type="hidden" name="pagina" value="Modificar.php">
                             <input type="submit" value="Guardar" class="btn btn-primary">
                             <a href="Principal.php" class="btn btn-secondary">Cancelar</a>
                         </form>

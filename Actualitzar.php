@@ -24,12 +24,24 @@ class Actualitzar {
         $descripcio = $conexion->real_escape_string($descripcio);
         $preu = $conexion->real_escape_string($preu);
         $categoria = $conexion->real_escape_string($categoria);
-
-        // Construye la consulta SQL de actualización
-        $consulta = "UPDATE productes
+        
+        
+        $pagina = isset($_POST['pagina']) ? $_POST['pagina'] : null;
+        echo $pagina;
+        if($pagina === "Nou.php") {
+            //Consulta SQL de inserción
+            $consulta = "INSERT INTO productes (nom, descripcio, preu, categoria_id) 
+                        VALUES ('$nom', '$descripcio', '$preu', '$categoria');";
+        } elseif ($pagina === "Modificar.php") {
+            // Construye la consulta SQL de actualización
+            $consulta = "UPDATE productes
                      SET nom = '$nom', descripcio = '$descripcio', preu = '$preu', categoria_id = '$categoria'
                      WHERE id = '$id'";
-
+        } else {
+            echo '<p>Página no válida</p>';
+            return;
+        }
+        
         // Ejecuta la consulta y redirige a la página principal si tiene éxito
         if ($conexion->query($consulta) === TRUE) {
             header('Location: Principal.php');
@@ -50,6 +62,8 @@ $nom = isset($_POST['nom']) ? $_POST['nom'] : null;
 $descripcio = isset($_POST['descripcio']) ? $_POST['descripcio'] : null;
 $preu = isset($_POST['preu']) ? $_POST['preu'] : null;
 $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : null;
+
+
 
 // Crea una instancia de la clase Actualitzar y llama al método actualizar
 $actualizarProducto = new Actualitzar();
