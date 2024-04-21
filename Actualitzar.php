@@ -3,9 +3,31 @@
 // Incluye el archivo de conexión
 require_once('Connexio.php');
 
+/**
+ * Clase que permite añadir o actualizar productos en la base de datos
+ * 
+ * 
+ *
+ * @author alejandra
+ * @version 1.0
+ */
+
 class Actualitzar {
-    
-    // Método para actualizar un producto en la base de datos
+        
+    /**
+     * Método que actualiza la base de datos creando o modificando un producto
+     * 
+     * Según de la página de la que provengamos hace un INSERT o un UPDATE
+     * a la base de datos
+     * 
+     * @param Integer $id Identificador del producto que queremos eliminar
+     * @param String $nom Nombre del producto
+     * @param String $descripcio Descripción del producto
+     * @param Float $preu precio del producto
+     * @param String $categoria Categoría del producto
+     * 
+     * @return void 
+     */
     public function actualizar($id, $nom, $descripcio, $preu, $categoria) {
         // Verifica si todos los campos requeridos están presentes
         if (!isset($id) || !isset($nom) || !isset($descripcio) || !isset($preu) || !isset($categoria)) {
