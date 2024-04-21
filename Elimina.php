@@ -12,7 +12,7 @@ class Elimina {
     /**
      * Método que elimina un producto de la base de datos
      * 
-     * @param String $id Identificador del producto que queremos eliminar
+     * @param Integer $id Identificador del producto que queremos eliminar
      * 
      * @return void 
      */
