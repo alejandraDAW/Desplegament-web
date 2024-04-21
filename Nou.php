@@ -3,17 +3,24 @@
 require_once('Connexio.php');
 require_once('Header.php');
 /**
- * Description of Nou
+ * Script que permite introducir nuevos productos a la base de datos
+ * 
+ * Al hacer submit redirige a la clase Actualitzar.php 
  *
  * @author alejandra
+ * @version 1.0
  */
 class Nou {
     
+    /**
+     * Método que muestra el formulario para introducir un nuevo producto
+     * 
+     * @return void
+     */
+    
     public function introduirProducte() {
-        
-        $conexionObj = new Connexio();
-        $conexion = $conexionObj->obtenirConnexio();
-        
+                
+        // Imprime la estructura HTML del formulario de inserción de nuevo producto
         echo '<!DOCTYPE html>
                   <html lang="es">
                   <head>
@@ -25,7 +32,7 @@ class Nou {
                   </head>
                   <body>
                     <div class="container mt-5" style="margin-bottom: 200px">
-                        <h2>Modificar producte</h2>
+                        <h2>Introduir nou producte</h2>
                         <hr>
                         <form action="Actualitzar.php" method="POST">
                             <!-- Campos del formulario con la información actual del producto -->
@@ -71,10 +78,7 @@ class Nou {
     }
 }
 
-
-
 $introduirFormulari = new Nou();
 $introduirFormulari->introduirProducte();
-
 
 ?>
