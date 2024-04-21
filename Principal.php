@@ -59,7 +59,7 @@ class Principal {
                         <td>' . $fila['preu'] . '</td>
                         <td>' . $fila['categoria'] . '</td>
                         <td><a href="Modificar.php?id=' . $fila['id'] . '" class="btn btn-warning">Modificar</a></td>
-                        <td><a href="Eliminar.php?id=' . $fila['id'] . '" class="btn btn-danger">Eliminar</a></td>
+                        <td><a href="Elimina.php?id=' . $fila['id'] . '" class="btn btn-danger">Eliminar</a></td>
                       </tr>';
                 $i++;
             }
